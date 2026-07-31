@@ -5,16 +5,17 @@
 try:
     class_number = None
     number = int(input("Enter a number:"))
-    if number >= 0:
-        if number == 0:
-            class_number = 'zero'
-        else:
-            class_number = 'Positive'
+
+    # Classify directly using elif chain
+    if number > 0:
+        class_number = 'Positive'
+    elif number == 0:
+        class_number = 'Zero'
     else:
         class_number = 'Negative'
     print(f"The number {number} falls into the {class_number} class")
 except ValueError:
-    print("Value Error: invalid input expected anumeric value.")
+    print("Value Error: invalid input expected a numeric value.")
 else:
     print("The classification was completed successfully.")
 finally:
@@ -24,6 +25,8 @@ finally:
 try:
     class_number = None
     number = int(input("Enter a number:"))
+    # First check sign, then separate zero from positive
+
     if number >= 0:
         if number == 0:
             class_number = 'zero'
